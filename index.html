@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +10,8 @@
             --text-color: #343b58;
             --accent-color: #34548a;
             --link-color: #2e7de9;
+            --pill-bg: #e1e2e7;
+            --border-color: #cfd1d7;
         }
 
         @media (prefers-color-scheme: dark) {
@@ -19,6 +20,8 @@
                 --text-color: #a9b1d6;
                 --accent-color: #7aa2f7;
                 --link-color: #7dcfff;
+                --pill-bg: #2f3549;
+                --border-color: #3b4261;
             }
         }
 
@@ -32,13 +35,12 @@
             padding: 0 20px;
         }
 
-        h1,
-        h3 {
+        h1, h3 {
             color: var(--accent-color);
         }
 
         h4 {
-            margin-top: 1.5em;
+            margin-top: 0;
             margin-bottom: 0.5em;
         }
 
@@ -51,42 +53,82 @@
             text-decoration: underline;
         }
 
-        .toolkit-item {
-            margin-bottom: 5px;
+        .experience-item {
+            border-left: 2px solid var(--border-color);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            transition: border-color 0.3s;
+        }
+
+        .experience-item:hover {
+            border-left-color: var(--accent-color);
+        }
+
+        .toolkit-section {
+            margin-bottom: 20px;
+        }
+
+        .pill {
+            display: inline-block;
+            background-color: var(--pill-bg);
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-right: 6px;
+            margin-bottom: 8px;
+            border: 1px solid var(--border-color);
         }
     </style>
 </head>
-
 <body>
     <h1 id="jerinjoy">Jerin Joy</h1>
     <b>Software / Hardware Engineer</b>
 
     <h3 id="workexperience">Work Experience</h3>
 
-    <h4 id="engineeratmeta.dec2025-present.">Engineer at Meta (Dec 2025 - Present)</h4>
-    Working on the software stack for MTIA systems.
+    <div class="experience-item">
+        <h4 id="engineeratmeta.dec2025-present.">Engineer at Meta (Dec 2025 - Present)</h4>
+        Working on the software stack for MTIA systems.
+    </div>
 
-    <h4 id="engineeratrivos.oct2021-dec2025.">Engineer at <a href="https://www.rivosinc.com">Rivos</a> (Oct 2021 - Dec
-        2025)</h4>
-    Defined architectural verification and silicon bring-up strategy for high-performance RISC-V CPUs.<br>
-    Architected bare-metal kernel test frameworks and lock-step validation tools for top-level CPU simulations.
+    <div class="experience-item">
+        <h4 id="engineeratrivos.oct2021-dec2025.">Engineer at <a href="https://www.rivosinc.com">Rivos</a> (Oct 2021 - Dec 2025)</h4>
+        Defined architectural verification and silicon bring-up strategy for high-performance RISC-V CPUs.<br>
+        Architected bare-metal kernel test frameworks and lock-step validation tools for top-level CPU simulations.
+    </div>
 
-    <h4 id="engineeratapple.july2009-oct2021.">Engineer at Apple (July 2009 - Oct 2021)</h4>
-    Key contributor to Apple Silicon. Built the ARMv8 CPU functional model used to validate all Apple Silicon CPUs, and
-    the primary CPU post-silicon validation tool.<br>
-    Built the Rosetta 2 debugger infrastructure during the Intel to Apple Silicon transition.
+    <div class="experience-item">
+        <h4 id="engineeratapple.july2009-oct2021.">Engineer at Apple (July 2009 - Oct 2021)</h4>
+        Key contributor to Apple Silicon. Built the ARMv8 CPU functional model used to validate all Apple Silicon CPUs, and the primary CPU post-silicon validation tool.<br>
+        Built the Rosetta 2 debugger infrastructure during the Intel to Apple Silicon transition.
+    </div>
 
-    <h4 id="hardwareengineeratsunmicrosystems.july2004-july2009.">Hardware Engineer at Sun Microsystems (July 2004 -
-        July 2009)</h4>
-    Developed Sun's multiprocessor memory consistency checker (TSOtool) and MMU testing functionality for verifying
-    UltraSPARC processors.
+    <div class="experience-item">
+        <h4 id="hardwareengineeratsunmicrosystems.july2004-july2009.">Hardware Engineer at Sun Microsystems (July 2004 - July 2009)</h4>
+        Developed Sun's multiprocessor memory consistency checker (TSOtool) and MMU testing functionality for verifying UltraSPARC processors.
+    </div>
 
     <h3 id="skills">Technical Toolkit</h3>
-    <div class="toolkit-item"><b>Languages/Tools:</b> C/C++, Python, RISC-V/ARM Assembly, GDB, Meson, some Rust.</div>
-    <div class="toolkit-item"><b>Architectures:</b> RISC-V, ARM.</div>
-    <div class="toolkit-item"><b>AI-Assisted Development:</b> Agentic Workflows, Skills, LLM-based Code Generation.
+    
+    <div class="toolkit-section">
+        <b>Languages/Tools:</b><br>
+        <span class="pill">C/C++</span><span class="pill">Python</span><span class="pill">RISC-V/ARM Assembly</span><span class="pill">GDB</span><span class="pill">Meson</span><span class="pill">Rust</span>
     </div>
-    <div class="toolkit-item"><b>Hardware Validation:</b> Pre/Post-Silicon, Bare-metal.</div>
+
+    <div class="toolkit-section">
+        <b>Architectures:</b><br>
+        <span class="pill">RISC-V</span><span class="pill">ARM</span>
+    </div>
+
+    <div class="toolkit-section">
+        <b>AI-Assisted Development:</b><br>
+        <span class="pill">Agentic Workflows</span><span class="pill">Skills</span><span class="pill">LLM-based Code Generation</span>
+    </div>
+
+    <div class="toolkit-section">
+        <b>Hardware Validation:</b><br>
+        <span class="pill">Pre/Post-Silicon</span><span class="pill">Bare-metal</span>
+    </div>
 
     <h3 id="education">Education</h3>
     <h4 id="Education.">B.Tech in Computer Sc. and Engineering, IIT Kharagpur (2000 - 2004)</h4>
@@ -94,5 +136,4 @@
     <h3 id="Contact">Contact</h3>
     <a href="https://www.linkedin.com/in/jerinjoy">LinkedIn</a> | <a href="https://github.com/jerinjoy">GitHub</a>
 </body>
-
 </html>
