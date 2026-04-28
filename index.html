@@ -13,6 +13,7 @@
             --link-color: #2e7de9;
             --pill-bg: #e1e2e7;
             --border-color: #cfd1d7;
+            --footer-text: #5c6a72;
         }
 
         @media (prefers-color-scheme: dark) {
@@ -23,6 +24,7 @@
                 --link-color: #7dcfff;
                 --pill-bg: #2f3549;
                 --border-color: #3b4261;
+                --footer-text: #565f89;
             }
         }
 
@@ -50,6 +52,24 @@
             color: var(--accent-color);
         }
 
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--accent-color);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .summary {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            font-size: 1.05em;
+        }
+
         h4 {
             margin-top: 0;
             margin-bottom: 0.5em;
@@ -58,6 +78,7 @@
         a {
             color: var(--link-color);
             text-decoration: none;
+            transition: color 0.2s;
         }
 
         a:hover {
@@ -89,17 +110,44 @@
             margin-bottom: 8px;
             border: 1px solid var(--border-color);
         }
-        .summary {
-            margin-top: 20px;
-            margin-bottom: 40px;
-            max-width: 700px;
-            font-size: 1.05em;
+
+        .button {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--pill-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-weight: 500;
+            margin-right: 12px;
+            margin-bottom: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border-color: var(--accent-color);
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--footer-text);
+            font-size: 0.85em;
         }
     </style>
 </head>
 <body>
     <h1 id="jerinjoy">Jerin Joy</h1>
-    <b>Software / Hardware Engineer</b>
+    <div class="subtitle">Software / Hardware Engineer</div>
 
     <div class="summary">
         Principal Engineer with 20+ years of expertise in Computer Architecture and System Software. Proven technical leader in building foundational validation frameworks for ARM (Apple Silicon) and RISC-V. Expert at bridging the HW/SW gap and leveraging AI development workflows to ensure software readiness and accelerate complex SoC delivery.
@@ -129,6 +177,19 @@
         Developed Sun's multiprocessor memory consistency checker (TSOtool) and MMU testing functionality for verifying UltraSPARC processors.
     </div>
 
+    <h3 id="projects">Featured Open Source Projects</h3>
+    <p style="margin-bottom: 25px; opacity: 0.8;">These are a selection of projects I have been able to open-source:</p>
+
+    <div class="experience-item">
+        <h4 id="jumpstart"><a href="https://github.com/rivosinc/JumpStart">JumpStart Framework</a></h4>
+        Architected a bare-metal kernel and test-writing framework (C, RISC-V Assembly, Python) for pre-silicon directed testing and post-silicon bug reproduction.
+    </div>
+
+    <div class="experience-item">
+        <h4 id="hammer"><a href="https://github.com/rivosinc/hammer">Hammer Infrastructure</a></h4>
+        Developed a pivotal lock-step validation tool for the Spike RISC-V simulator, enabling real-time RTL mismatch detection and significantly reducing debug cycles.
+    </div>
+
     <h3 id="skills">Technical Toolkit</h3>
     
     <div class="toolkit-section">
@@ -152,9 +213,18 @@
     </div>
 
     <h3 id="education">Education</h3>
-    <h4 id="Education.">B.Tech in Computer Sc. and Engineering, IIT Kharagpur (2000 - 2004)</h4>
+    <div class="experience-item">
+        <h4 id="Education.">B.Tech in Computer Sc. and Engineering, IIT Kharagpur (2000 - 2004)</h4>
+    </div>
 
     <h3 id="Contact">Contact</h3>
-    <a href="https://www.linkedin.com/in/jerinjoy">LinkedIn</a> | <a href="https://github.com/jerinjoy">GitHub</a>
+    <div style="margin-top: 20px;">
+        <a href="https://www.linkedin.com/in/jerinjoy" class="button">LinkedIn</a>
+        <a href="https://github.com/jerinjoy" class="button">GitHub</a>
+    </div>
+
+    <footer>
+        &copy; 2026 Jerin Joy. Last updated: April 2026.
+    </footer>
 </body>
 </html>
